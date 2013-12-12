@@ -58,8 +58,6 @@ statusMessage:="Inactive"
 messageLog:="debug enabled and ready"
 
 GoSub, FirstRunner
-GoSub, CheckUpdate
-GoSub, RegisterUser
 
 #Persistent  ; Keep the script running until the user exits it.
 	Menu, tray, add  ; Creates a separator line.
