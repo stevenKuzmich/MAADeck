@@ -1,0 +1,21 @@
+myPass:="rocket"
+
+IniRead, versionPass, FlightDeckUserSettings.ini, user, versionPass, 0
+
+if (versionPass <> myPass)
+{
+	loop
+	{
+		InputBox, versionPass, , Enter the password for v%version%:, hide 
+		if ErrorLevel
+			ExitApp  1
+		else
+		{
+			if (versionPass = myPass)
+			{
+				IniWrite, %versionPass%, FlightDeckUserSettings.ini, user, versionPass
+				break
+			}
+		}
+	}
+}
